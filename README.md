@@ -1,6 +1,8 @@
 ### Usage
 
 ```sh
+sudo ./compose.sh         # this downloads docker compose and opens up the firewall
+
 make  run                 # builds grafana and prometheus 
                           # images and initializes all three containers 
                           # that forms the infra (grafana, prometheus and 
