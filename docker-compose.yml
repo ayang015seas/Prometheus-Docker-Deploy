@@ -11,7 +11,6 @@ services:
     container_name: 'prometheus'
     ports:
       - '9090:9090'
-      - '127.0.0.1:9090:9090'
 
   # The grafana container uses the image resulting from the build
   # of `./grafana` which simply packs some configuration into the
@@ -22,7 +21,7 @@ services:
     build: './grafana'
     container_name: 'grafana'
     ports:
-      - '3000:3000'
+      - '5001:3000'
 
   # You'd typically not run `node_exporter` in a container like
   # this.
