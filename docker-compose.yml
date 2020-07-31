@@ -8,7 +8,8 @@ services:
   prometheus:
     network_mode: 'host'
     build: './prometheus'
-    container_name: 'prometheus'    
+    container_name: 'prometheus'
+    restart: always    
     ports:
       - '9090:9090'
 
@@ -18,11 +19,12 @@ services:
   #
   # This could instead be a volume-mounted container.
   grafana:
-#    network_mode: 'host'
+    network_mode: 'host'
     build: './grafana'
     container_name: 'grafana'
+    restart: always
     ports:
-      - '5001:3000'
+      - '5001:5001'
 
   # You'd typically not run `node_exporter` in a container like
   # this.
